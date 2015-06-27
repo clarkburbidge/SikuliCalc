@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 2.9.dev20150605 (Jython 2.7.0 on java1.8.0_45)" generated="20150626 22:00:58.499">
+<suite source="C:\RobotFramework\SikuliCalc\SikuliCalc2.robot" name="SikuliCalc2" id="s1">
+<test name="Test" id="s1-t1">
+<kw library="Remote" name="Click Object">
+<arguments>
+<arg>${data_path}\\btnC.png</arg>
+<arg>${timeout}</arg>
+<arg>${similarity}</arg>
+</arguments>
+<msg level="TRACE" timestamp="20150626 22:00:59.985">Arguments: [ 'C:\\RobotFramework\\SikuliCalc\\SikuliCalcImagesStore\\btnC.png' | '10' | '0.90' ]</msg>
+<msg level="TRACE" timestamp="20150626 22:01:01.842">Return: b''</msg>
+<status endtime="20150626 22:01:01.842" starttime="20150626 22:00:59.979" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20150626 22:01:01.858" starttime="20150626 22:00:59.969" status="PASS"></status>
+</test>
+<doc>Remote Sikuli into Robot Framework</doc>
+<status endtime="20150626 22:01:01.858" starttime="20150626 22:00:58.514" status="PASS"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" name="SikuliCalc2" id="s1">SikuliCalc2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

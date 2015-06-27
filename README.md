@@ -1,5 +1,8 @@
-# SikuliCalc
+#SikuliCalc
+##First Stage
 This is the code and explanation on how I was able to somewhat successfully implement Sikuli testing the Windows Calculator with Robot Framework as described on [Mike's cognition - How-To: Sikuli and Robot Framework Integration](http://blog.mykhailo.com/2011/02/how-to-sikuli-and-robot-framework.html). Also [Tset-Noitamotua's Github repository](https://github.com/Tset-Noitamotua/Sikuli-and-Robot-Framework-Integration/tree/Windows-8.1) was very helpful and the source for much of the other code.
+##Moving to a Remote Library
+My next stp has been to try and do this same exercies with remote Skilui Library. Most of the information came from the [Sikuli Selenium Robot Framework Integration on 8BitAvenue](http://www.8bitavenue.com/2012/04/sikuli-selenium-robot-framework-integration/). It is a bit dated but I was able to use some of the ideas to start on my way.
 ##My Setup
 ###Software
 VirtualBox 4.3.28 r100309, Modern IE Windows 8.1, SikuliX 1.1.0, Robot Framework 2.8.7, Python 2.7.10 win32, Robot Framework 2.9.dev201550605, Jython 2.7.0, java1.8.0_45
@@ -19,7 +22,7 @@ SIKULI_HOME = C:\SikuliX\
 
 jre-8u45-windows-i586.exe [download from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html).
 
-### Check java
+###Check java
 
     c:\>java -d32 -version
     java version "1.8.0_45"
@@ -64,6 +67,42 @@ jython-installer-2.7.0.jar [downloaded from jython.org](http://search.maven.org/
     c:\>jybot --version
     Robot Framework 2.9.dev20150605 (Jython 2.7.0 on java1.8.0_45)
     
+#Running the test
+I created a .bat file to run the test:
+
+    @echo off
+    
+    set sikulix_jar=C:\SikuliX\sikulixapi.jar
+    
+    set CLASSPATH=%sikulix_jar%
+    set JYTHONPATH=%sikulix_jar%/Lib
+    
+    jybot --pythonpath=SikuliCalc.sikuli ^
+          --outputdir=TestResults ^
+          --loglevel=TRACE ^
+          %*
+#Extending to a Remote Sikuli Library
+
+##Install the Python Remote Server
+
+    c:\>pip install robotremoteserver
+    
+[PythonRemoteServer Docs](https://github.com/robotframework/PythonRemoteServer)
+
+##Save the Sikuli Remote Library as SikuliRemoteLibrary.py
+    
+##Running the Server
+This was crux for me, and it was solved by creating a launching .bat script almost identical to the one above: StartRemoteLibraryServer.bat
+
+    @echo off
+    
+    set sikulix_jar=C:\SikuliX\sikulixapi.jar
+    
+    set CLASSPATH=%sikulix_jar%
+    set JYTHONPATH=%sikulix_jar%/Lib
+    
+    jython SikuliRemoteLibrary.py
+
 #To Do
 1. Figure out how to report FAIL on the 2+2=5 test.
-2. Move this example to a Remote Server so that the primary library can be AutoIt.
+2. Flesh out this example to a Remote Server so that the primary library can be AutoIt.

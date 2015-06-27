@@ -1,102 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.9.dev20150605 (Jython 2.7.0 on java1.8.0_45)" generated="20150620 21:45:39.398">
-<suite source="C:\RobotFramework\SikuliCalc\SikuliCalc.robot" name="SikuliCalc" id="s1">
+<robot generator="Robot 2.9.dev20150605 (Jython 2.7.0 on java1.8.0_45)" generated="20150626 15:53:36.865">
+<suite source="c:\RobotFramework\SikuliCalc\SikuliCalc1.robot" name="SikuliCalc1" id="s1">
 <test name="Verify that 2 + 2 = 4" id="s1-t1">
-<kw library="Calculator" name="Start App">
-<msg level="TRACE" timestamp="20150620 21:45:42.163">Arguments: [  ]</msg>
-<msg level="INFO" timestamp="20150620 21:45:46.726">[log] App.open [-1:]
-[log] App.focus:  [-1:]</msg>
-<msg level="TRACE" timestamp="20150620 21:45:46.726">Return: None</msg>
-<status endtime="20150620 21:45:46.726" starttime="20150620 21:45:42.161" status="PASS"></status>
+<kw library="Remote" name="Start App">
+<msg level="TRACE" timestamp="20150626 15:53:38.271">Arguments: [  ]</msg>
+<msg level="TRACE" timestamp="20150626 15:53:40.225">Return: b''</msg>
+<status endtime="20150626 15:53:40.225" starttime="20150626 15:53:38.271" status="PASS"></status>
 </kw>
-<kw library="Calculator" name="Verify App">
-<msg level="TRACE" timestamp="20150620 21:45:46.726">Arguments: [  ]</msg>
-<msg level="INFO" timestamp="20150620 21:45:47.897">PASS: Calculator window appeared</msg>
-<msg level="TRACE" timestamp="20150620 21:45:47.897">Return: None</msg>
-<status endtime="20150620 21:45:47.897" starttime="20150620 21:45:46.726" status="PASS"></status>
+<kw library="Remote" name="Verify App">
+<msg level="TRACE" timestamp="20150626 15:53:40.240">Arguments: [  ]</msg>
+<msg level="INFO" timestamp="20150626 15:53:40.287">FAIL: No calculator window</msg>
+<msg level="TRACE" timestamp="20150626 15:53:40.287">Return: b''</msg>
+<status endtime="20150626 15:53:40.303" starttime="20150626 15:53:40.240" status="PASS"></status>
 </kw>
-<kw library="Calculator" name="Perform Action">
+<kw library="Remote" name="Perform Action">
 <arguments>
 <arg>2</arg>
 <arg>+</arg>
 <arg>2</arg>
 </arguments>
-<msg level="TRACE" timestamp="20150620 21:45:47.913">Arguments: [ '2' | '+' | '2' ]</msg>
-<msg level="INFO" timestamp="20150620 21:45:56.928">[log] CLICK on L(1329,464)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1290,560)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1368,592)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1290,560)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1407,575)@S(0)[0,0 2100x1190]</msg>
-<msg level="TRACE" timestamp="20150620 21:45:56.928">Return: None</msg>
-<status endtime="20150620 21:45:56.928" starttime="20150620 21:45:47.913" status="PASS"></status>
+<msg level="TRACE" timestamp="20150626 15:53:40.303">Arguments: [ '2' | '+' | '2' ]</msg>
+<msg level="FAIL" timestamp="20150626 15:53:40.381">FindFailed: FindFailed: Region: doFind: Image not loadable: CalcApp.png
+  Line 2527, in file Region.java
+</msg>
+<msg level="DEBUG" timestamp="20150626 15:53:40.381">Traceback (most recent call last):
+  File "SikuliRemoteLibrary1.py", line 27, in performAction
+    find("CalcApp.png")
+</msg>
+<status endtime="20150626 15:53:40.381" starttime="20150626 15:53:40.303" status="FAIL"></status>
 </kw>
-<kw library="Calculator" name="Verify Result">
-<arguments>
-<arg>4</arg>
-</arguments>
-<msg level="TRACE" timestamp="20150620 21:45:56.928">Arguments: [ '4' ]</msg>
-<msg level="INFO" timestamp="20150620 21:45:57.132">4
-4
-PASS: Action performed correctly and result equals 4
-[log] ( Ctrl )  TYPE "c"</msg>
-<msg level="TRACE" timestamp="20150620 21:45:57.132">Return: None</msg>
-<status endtime="20150620 21:45:57.132" starttime="20150620 21:45:56.928" status="PASS"></status>
-</kw>
-<status critical="yes" endtime="20150620 21:45:57.147" starttime="20150620 21:45:42.144" status="PASS"></status>
+<status critical="yes" endtime="20150626 15:53:40.396" starttime="20150626 15:53:38.271" status="FAIL">FindFailed: FindFailed: Region: doFind: Image not loadable: CalcApp.png
+  Line 2527, in file Region.java
+</status>
 </test>
 <test name="Verify that 2 + 2 = 5" id="s1-t2">
-<kw library="Calculator" name="Start App">
-<msg level="TRACE" timestamp="20150620 21:45:57.303">Arguments: [  ]</msg>
-<msg level="INFO" timestamp="20150620 21:45:58.975">[log] App.focus:  [1384:calc.exe]</msg>
-<msg level="TRACE" timestamp="20150620 21:45:58.975">Return: None</msg>
-<status endtime="20150620 21:45:58.975" starttime="20150620 21:45:57.288" status="PASS"></status>
+<kw library="Remote" name="Start App">
+<msg level="TRACE" timestamp="20150626 15:53:40.396">Arguments: [  ]</msg>
+<msg level="TRACE" timestamp="20150626 15:53:41.803">Return: b''</msg>
+<status endtime="20150626 15:53:41.803" starttime="20150626 15:53:40.396" status="PASS"></status>
 </kw>
-<kw library="Calculator" name="Verify App">
-<msg level="TRACE" timestamp="20150620 21:45:58.975">Arguments: [  ]</msg>
-<msg level="INFO" timestamp="20150620 21:46:00.088">PASS: Calculator window appeared</msg>
-<msg level="TRACE" timestamp="20150620 21:46:00.090">Return: None</msg>
-<status endtime="20150620 21:46:00.091" starttime="20150620 21:45:58.975" status="PASS"></status>
+<kw library="Remote" name="Verify App">
+<msg level="TRACE" timestamp="20150626 15:53:41.803">Arguments: [  ]</msg>
+<msg level="INFO" timestamp="20150626 15:53:41.834">FAIL: No calculator window</msg>
+<msg level="TRACE" timestamp="20150626 15:53:41.834">Return: b''</msg>
+<status endtime="20150626 15:53:41.834" starttime="20150626 15:53:41.803" status="PASS"></status>
 </kw>
-<kw library="Calculator" name="Perform Action">
+<kw library="Remote" name="Perform Action">
 <arguments>
 <arg>2</arg>
 <arg>+</arg>
 <arg>2</arg>
 </arguments>
-<msg level="TRACE" timestamp="20150620 21:46:00.102">Arguments: [ '2' | '+' | '2' ]</msg>
-<msg level="INFO" timestamp="20150620 21:46:05.475">[log] CLICK on L(1329,464)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1290,560)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1368,592)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1290,560)@S(0)[0,0 2100x1190]
-[log] CLICK on L(1407,575)@S(0)[0,0 2100x1190]</msg>
-<msg level="TRACE" timestamp="20150620 21:46:05.475">Return: None</msg>
-<status endtime="20150620 21:46:05.475" starttime="20150620 21:46:00.097" status="PASS"></status>
+<msg level="TRACE" timestamp="20150626 15:53:41.834">Arguments: [ '2' | '+' | '2' ]</msg>
+<msg level="FAIL" timestamp="20150626 15:53:41.881">FindFailed: FindFailed: Region: doFind: Image not loadable: CalcApp.png
+  Line 2527, in file Region.java
+</msg>
+<msg level="DEBUG" timestamp="20150626 15:53:41.881">Traceback (most recent call last):
+  File "SikuliRemoteLibrary1.py", line 27, in performAction
+    find("CalcApp.png")
+</msg>
+<status endtime="20150626 15:53:41.897" starttime="20150626 15:53:41.834" status="FAIL"></status>
 </kw>
-<kw library="Calculator" name="Verify Result">
-<arguments>
-<arg>5</arg>
-</arguments>
-<msg level="TRACE" timestamp="20150620 21:46:05.475">Arguments: [ '5' ]</msg>
-<msg level="INFO" timestamp="20150620 21:46:05.585">5
-6
-FAIL: Actual result '6' is not equal to expected result '5'
-[log] ( Ctrl )  TYPE "c"</msg>
-<msg level="TRACE" timestamp="20150620 21:46:05.585">Return: None</msg>
-<status endtime="20150620 21:46:05.585" starttime="20150620 21:46:05.475" status="PASS"></status>
-</kw>
-<status critical="yes" endtime="20150620 21:46:05.585" starttime="20150620 21:45:57.288" status="PASS"></status>
+<status critical="yes" endtime="20150626 15:53:41.897" starttime="20150626 15:53:40.396" status="FAIL">FindFailed: FindFailed: Region: doFind: Image not loadable: CalcApp.png
+  Line 2527, in file Region.java
+</status>
 </test>
-<status endtime="20150620 21:46:05.601" starttime="20150620 21:45:39.424" status="PASS"></status>
+<status endtime="20150626 15:53:41.912" starttime="20150626 15:53:36.897" status="FAIL"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0">Critical Tests</stat>
-<stat pass="2" fail="0">All Tests</stat>
+<stat pass="0" fail="2">Critical Tests</stat>
+<stat pass="0" fail="2">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" name="SikuliCalc" id="s1">SikuliCalc</stat>
+<stat pass="0" fail="2" name="SikuliCalc1" id="s1">SikuliCalc1</stat>
 </suite>
 </statistics>
 <errors>
